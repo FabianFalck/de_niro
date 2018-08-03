@@ -8,10 +8,19 @@ Project DE NIRO was built using Python and the Robot Operating System (ROS).
 
 ## Additional Resources
 
-Comprehensive documentation has been written for this project with guidance on installing and running components. Links are provided here.
+Comprehensive documentation has been written for the code in this repository with guidance on installing and running components. A link is provided below.
+         
+**Documentation** website: [https://robot-intelligence-lab.gitlab.io/fezzik-docs](https://robot-intelligence-lab.gitlab.io/fezzik-docs)
 
-**Documentation** repo (source): [https://gitlab.com/robot-intelligence-lab/fezzik-docs](https://gitlab.com/robot-intelligence-lab/fezzik-docs)               
-**Documentation** website (output)  [https://robot-intelligence-lab.gitlab.io/fezzik-docs](https://robot-intelligence-lab.gitlab.io/fezzik-docs)
+A video and further illustrations of DE NIRO can be found here:
+
+**Video**: [https://www.youtube.com/watch?v=qnvPpNyWY2M] (https://www.youtube.com/watch?v=qnvPpNyWY2M)
+
+**Photos**: [http://www.imperial.ac.uk/robot-intelligence/robots/robot_de_niro/] (http://www.imperial.ac.uk/robot-intelligence/robots/robot_de_niro/)
+
+Datasets of DE NIRO's sensors will soon be released soon.
+
+**Sensor Datasets**: [http://www.imperial.ac.uk/robot-intelligence/software/] (http://www.imperial.ac.uk/robot-intelligence/software/).
 
 ## Requirements
 
