@@ -1,0 +1,68 @@
+<?xml version='1.0'?>
+
+<robot name="quickie" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find deniro_description)/urdf/materials.xacro" />
+
+  <!-- Quickie Base -->
+  <link name='quickie_base'>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/Salsa.STL" />
+      </geometry>
+      <material name="red"/>
+    </collision>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/Salsa.STL" />
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+  </link>
+
+  <!-- Hokuyo Laser -->
+  <link name="laser">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://deniro_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://deniro_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="hokuyo_joint" type="fixed">
+    <origin xyz=".34 0 0.35" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="base_link">
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="quickie_base"/>
+  </joint>
+
+</robot>
+

@@ -1,0 +1,60 @@
+#BASE LOCAL PLANNER CONFIGURATIONS
+
+controller_frequency: 40.0 # Hz
+#planner_frequency: 0.2 # Hz The rate in Hz at which to run the global planning loop. If the frequency is set to 0.0, the global planner will only run when a new goal is received or the local planner reports that its path is blocked.
+
+DWAPlannerROS:
+  max_vel_x: 0.1
+  min_vel_x: 0.0                 # -ve for reverse, but set to zero because no backward facing sensor
+  max_vel_y: 0.0                 # 0 for diff drive robot
+  min_vel_y: 0.0                 # 0 for diff drive robot
+  max_trans_vel: 0.1             # should be equal to max vel
+  min_trans_vel: 0.0             # absolute value of min vel
+  max_rot_vel: 0.45
+  min_rot_vel: 0.1
+
+  acc_lim_x: 1.0                 # keep acceleration limits >= 1
+  acc_lim_th: 1.0                # keep acceleration limits >= 1 
+  acc_lim_y:  0.0                # 0 for diff drive robot
+
+  sim_time: 4.0                  # amount of time to forward-simulate trajectory (seconds)
+  vx_samples: 20                 # number of samples to use when exploring x vel space
+  vy_samples: 0                  # number of samples to use when exploring y vel space (0 for diff drive robot)
+  vtheta_samples: 20             # number of samples to use when exploring theta vel space
+
+  yaw_goal_tolerance: 0.1745 #10 degrees
+  xy_goal_tolerance: 0.2
+  latch_xy_goal_tolerance: false #if true the robot will rotate in place when reach goal
+  meter_scoring: true # goal_distance and path_distance expressed in meters not cells
+  path_distance_bias: 32.0 #how much controller should stay close to path given
+  goal_distance_bias: 24.0 #how much controller should attempt to reach its local goal
+  occdist_scale: 0.02 #how much controller should attempt to avoid obstacles
+  publish_cost_grid_pc: false #publish cost grid that the planner will use when planning 
+  publish_traj_pc: false #publish trajectory cloud
+  holonomic_robot: false
+
+
+  # TrajectoryPlannerROS:
+#   max_vel_x: 0.5
+#   min_vel_x: 0.01
+#   max_vel_theta: 0.5
+#   min_in_place_vel_theta: 0.01
+
+#   acc_lim_theta: 0.5
+#   acc_lim_x: 0.5
+#   acc_lim_y: 0.5
+
+#   yaw_goal_tolerance: 0.1745  # 10 degrees
+#   xy_goal_tolerance: 0.2 
+#   #vx_samples: 20                 # number of samples to use when exploring x vel space
+#   #vtheta_samples: 20             # number of samples to use when exploring theta vel space
+#   meter_scoring: true # goal_distance and path_distance expressed in meters not cells
+#   holonomic_robot: false
+#   sim_time: 5.0
+
+#   pdist_scale: 3 #how much controller should stay close to path given (max 5) init:0.6
+#   gdist_scale: 0.8 #how much controller should attempt to reach its local goal (max 5) init:0.8
+#   occdist_scale: 0.05 #how much controller should attempt to avoid obstacles init:0.01
+#   publish_cost_grid_pc: true #publish cost grid that the planner will use when planning 
+#   publish_traj_pc: true #publish trajectory cloud
+#   holonomic_robot: false

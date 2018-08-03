@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+
+<robot name="mobile_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find deniro_description)/urdf/materials.xacro" />
+
+  <!-- Mobile Base -->
+  <link name='mobile_base'>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/Salsa.STL" />
+      </geometry>
+      <material name="darkred">
+        <color rgba=".5 .1 .1 1"/>
+      </material>
+    </collision>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/Salsa.STL" />
+      </geometry>
+      <material name="darkred">
+        <color rgba=".5 .1 .1 1"/>
+      </material>
+    </visual>
+
+  </link>
+
+  <joint name="mobile_base_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.3"/>
+    <!-- z = -0.5*increase in scissorlift + currentz-->
+    <parent link="scissorlift"/>
+    <child link="mobile_base"/>
+  </joint>
+
+  <!-- Hokuyo Laser -->
+  <link name="laser">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://deniro_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://deniro_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="hokuyo_fixed" type="fixed">
+    <origin xyz=".34 0 0.35" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="base_link">
+  </link>
+
+  <joint name="base_link_fixed" type="fixed">
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="mobile_base"/>
+  </joint>
+
+</robot>
+

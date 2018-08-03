@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<robot
+  name="pedestal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link
+    name="pedestal">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/pedestal.STL" />
+      </geometry>
+    <material
+      name="pedestal">
+      <color rgba="0.2 0.2 0.2 1"/>
+    </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://deniro_description/meshes/pedestal.STL" />
+      </geometry>
+    <material
+      name="pedestal">
+      <color rgba="0.2 0.2 0.2 1"/>
+    </material>
+    </collision>
+  </link>
+
+  <joint name="pedestal_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+    <parent link="torso"/>
+    <child link="pedestal"/>
+  </joint>
+
+  <link
+    name="scissorlift">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size = "0.4 0.25 0.1"/>
+      </geometry>
+      <material name="darkgray">
+        <color rgba=".1 .1 .1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size = "0.4 0.25 0.1"/>
+      </geometry>
+      <material name="darkgray">
+        <color rgba=".1 .1 .1 1"/>
+      </material>
+    </collision>
+  </link>
+
+  <joint name="scissorlift_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.225"/>
+    <!-- z = -0.5*increase in scissorlift + currentz-->
+    <parent link="pedestal"/>
+    <child link="scissorlift"/>
+  </joint>
+
+</robot>

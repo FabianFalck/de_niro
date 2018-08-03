@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!--
+# Launch file for the State Machine stack.
+# Author: Sagar Doshi
+# Date: 05/18
+-->
+
+<launch>
+
+    <!-- Launch initial parameter -->
+    <node pkg="brain" type="initialise_parameters.py" name="set_parameters" output="screen"/>
+
+    <!-- Launch object recognition -->
+    <include file="$(find object_recognition)/launch/object_recognition.launch"/>
+    <include file="$(find object_recognition)/launch/detection_drivers.launch"/>
+
+    <!-- Launch audio out -->
+    <include file="$(find audio)/launch/audio.launch"/>
+
+    <!-- Launch grasping -->
+    <include file="$(find grasping)/launch/grasping.launch"/>
+
+    <!-- Launch speech recognition -->
+    <include file="$(find speech_recog)/launch/speech_recog.launch"/>
+
+    <!-- Launch face recognition -->
+    <include file="$(find face_recog)/launch/face_recog.launch"/>
+
+    <!-- Start the brain -->
+    <node pkg="brain" type="sm_main.py" name="sm_main" output="screen">
+    </node>
+
+
+</launch>

@@ -1,0 +1,2 @@
+int32MultiArray requested_object_tag
+bool is_fetching_object

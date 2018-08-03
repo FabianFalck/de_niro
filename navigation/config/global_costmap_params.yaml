@@ -1,0 +1,13 @@
+#GLOBAL COSTMAP PARAMETERS
+
+global_costmap:
+  
+  global_frame: /map # coord frame costmap runs in
+  robot_base_frame: /base_link # coord frame for reference of robot base
+  update_frequency: 40.0 # frequency costmap updates loop (Hz) init:30
+  publish_frequency: 40.0 # frequency costmap publishes visualization info (Hz)
+  resolution: 0.025 # meter/cell
+  static_map: true # true if using existing map
+  width: 10.0 # meter
+  height: 10.0 # meter
+  transform_tolerance: 0.5

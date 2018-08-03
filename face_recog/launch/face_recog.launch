@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!--
+Launch file for the Face Recognition stack.
+author: Fabian Falck
+date: 05/18
+-->
+
+<launch>
+
+    <!-- Launch face recognition publisher -->
+    <node pkg="face_recog" type="face_pub.py" name="face_recog" output="log"/>
+
+</launch>

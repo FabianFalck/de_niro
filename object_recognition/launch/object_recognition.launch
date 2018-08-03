@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+Launches scripts for object recognition
+author: Kim Rants
+date: 04/18
+-->
+
+<launch>
+
+    <!-- Launch Kinect marker detection publisher -->
+    <node pkg="object_recognition" type="kinect_detected_markers.py" name="object_handler"/>
+
+    <!-- Launch object card recogniser -->
+    <node pkg="object_recognition" type="receive_instruction.py" name="receive_instruction" output="screen"/>
+
+    <!-- Launch object recognition server -->
+    <node pkg="object_recognition" type="object_recognition_server.py" name="object_recognition" output="screen"/>
+
+</launch>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!--
+# Launch file for the robot configuration components of the Navigation stack.
+# Author: John Lingi
+# Date: 02/18
+-->
+
+<launch>
+
+  <!-- Laser scanner -->
+  <node name="scan1" pkg="urg_node" type="urg_node" output="screen" >
+    <param name="ip_address" value="192.168.0.31" /> <!-- ip address for the hokuyo lidar -->
+    <param name="frame_id" value="laser" /> <!-- set frame id for lases scan -->
+    <param name="calibrate_time" value="true" />
+    <param name="publish_intensity" value="true" /> <!-- set to false to save bandwith -->
+    <param name="angle_min" value="-1.57" />   <!-- Laser scanner range to use. Must be less than 270 degree default otherwise base sees itself as an obstacle -->
+    <!-- minimum scan angle -->
+    <param name="angle_max" value="1.57"/> <!-- Laser scanner range to use. Must be less than 270 degree default otherwise base sees itself as an obstacle -->
+    <!-- maximum scan angle -->
+  </node>
+
+  <!-- in the ASDA demo launch file, these lines are commented out, is that because DE NIRO publishes these automatically? -->
+  <!-- Robot transformations -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find deniro_description)/urdf/quickie.xacro'"/>
+
+    <!-- Send joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="False"/>
+  </node>
+
+    <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+</launch>

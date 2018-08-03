@@ -1,0 +1,3 @@
+geometry_msgs/Point object_position
+---
+uint8 grasping_status

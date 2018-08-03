@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- 
+# A launch file for visualising DENIRO model in Rviz
+# Prepared by : A Low
+# 2017 -->
+<launch>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py --inorder '$(find deniro_description)/urdf/deniro.xacro'"/>
+
+  <!-- Send joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="False"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find deniro_description)/rviz/deniro.rviz"/>
+
+</launch>
+

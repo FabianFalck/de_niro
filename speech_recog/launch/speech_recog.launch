@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!--
+Launch file for Speech Recognition stack.
+author: Fabian Falck
+date: 04/18
+-->
+
+<launch>
+
+    <!-- Launch speech recognition server -->
+    <node pkg="speech_recog" type="speech_server.py" name="speech_recognition"/>
+
+
+</launch>

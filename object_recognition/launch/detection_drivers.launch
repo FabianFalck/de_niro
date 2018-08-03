@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+Launches scripts for object recognition
+author: Kim Rants
+date: 04/18
+-->
+
+<launch>
+   <!-- Launch Kinect -->
+    <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
+        <arg name="output" value="log"/>
+    </include>
+
+    <!-- Launch ROS markers package-->
+    <include file="$(find ros_markers)/launch/detect.launch">
+        <arg name="image_topic" value="/kinect2/hd/image_color" />
+        <param name="camera_frame_id" value="kinect2_rgb_optical_frame" />
+    </include>
+
+</launch>

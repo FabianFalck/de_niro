@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+# Alternate launch file for the Audio Out stack which uses Soundplay.
+# Author: Clara Pouletty
+# Date: 05/18
+-->
+
+<launch>
+
+    <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen">
+    </node>
+
+    <node name="talkback" pkg="audio" type="talkback.py" output="screen">
+        <param name="voice" value="voice_kal_diphone"/>
+        <param name="wavepath" value="/home/robin/audio_assets"/>
+    </node>
+
+
+</launch>

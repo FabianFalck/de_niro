@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>brain</name>
+  <version>0.0.0</version>
+  <description>The brain package</description>
+
+  <maintainer email="sagar.doshi17@imperial.ac.uk">Sagar Doshi</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://www.imperial.ac.uk/robot-intelligence/</url>
+
+
+  <author email="sagar.doshi17@imperial.ac.uk">Sagar Doshi</author>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>smach</depend>
+  <depend>std_msgs</depend>
+  <depend>audio</depend>
+  <depend>navigation</depend>
+  <depend>grasping</depend>
+  <depend>object_recogntion</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_export_depend>rostest</build_export_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

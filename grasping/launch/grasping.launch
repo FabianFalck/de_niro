@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+Launch file for the Grasping stack.
+Author: John Lingi
+Date: 04/18
+-->
+
+<launch>
+
+    <!-- Launch grasping status server -->
+    <node pkg="grasping" type="grasping_status_server.py" name="grasping_status"/>
+
+    <!-- Launch grasping server -->
+    <node pkg="grasping" type="grasping_handler_server.py" name="grasping_handler" output="screen"/>
+
+    <!-- Launch offering object server -->
+    <node pkg="grasping" type="offering_object_server.py" name="offering_object" output="screen"/>
+
+</launch>

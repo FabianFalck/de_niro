@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+Launches scripts for object recognition
+author: John Lingi
+date: 04/18
+-->
+
+<launch>
+
+    <!-- Launch marker publisher -->
+    <node pkg="object_recognition" type="marker_publisher.py" name="object_handler" output="screen"/>
+
+    <!-- Launch object card recogniser -->
+    <node pkg="object_recognition" type="receive_instruction.py" name="receive_instruction" output="screen"/>
+
+    <!-- Launch marker position listener -->
+    <node pkg="object_recognition" type="marker_position_listener.py" name="marker_position_listener" output="screen"/>
+
+</launch>

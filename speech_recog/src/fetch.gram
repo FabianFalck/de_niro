@@ -1,0 +1,22 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for English fetching an object
+
+   when changed, also change configs.py definition (in particular for fetchable objects)
+ */
+
+grammar fetch;
+
+public <fetch> = [ <command> <article> <object> ] [ enumerate ] ;
+
+<command> = fetch me | give me ;
+<article> = a | an | the ;
+<object> = coffee | water | juice | football ;
+<enumerate> = enumerate
+
+/** <politeness> = please | would you please ; */
+
+/**
+  * original: https://raw.githubusercontent.com/Uberi/speech_recognition/master/examples/counting.gram
+  */

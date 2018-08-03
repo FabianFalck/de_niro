@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!--
+# Launch file for the Navigation stack.
+# Author: John Lingi
+# Date: 02/18
+-->
+
+<launch>
+
+  <include file="$(find navigation)/launch/nav_robot_config.launch"/>
+  <include file="$(find navigation)/launch/nav_move_base.launch"/>
+
+  <!-- Launch navigation handler server -->
+  <node pkg="navigation" type="navigation_handler_server.py" name="navigation_handler_server" output="screen"/>
+
+
+</launch>

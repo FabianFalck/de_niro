@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<robot name="deniro" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find deniro_description)/urdf/baxter_base.urdf.xacro"/>
+
+  <xacro:include filename="$(find deniro_description)/urdf/mobile_base.xacro"/>
+
+  <xacro:include filename="$(find deniro_description)/urdf/pedestal.xacro"/>
+
+  <!-- Left End Effector -->
+  <!--xacro:include filename="$(find deniro_description)/urdf/left_end_effector.urdf.xacro" /-->
+
+  <!-- Right End Effector -->
+  <!--xacro:include filename="$(find deniro_description)/urdf/right_end_effector.urdf.xacro" /-->
+
+</robot>

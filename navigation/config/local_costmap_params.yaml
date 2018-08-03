@@ -1,0 +1,15 @@
+#LOCAL COSTMAP PARAMETERS
+
+local_costmap:
+  global_frame: /map # coord frame costmap runs in
+  robot_base_frame: /base_link # coord frame for reference of robot base
+  update_frequency: 40.0 # frequency costmap updates loop (Hz) init:30
+  publish_frequency: 40.0 # frequency costmap publishes visualization info (Hz)
+  static_map: true # true if using existing map
+  rolling_window: true # true means costmap remain centered around the robot as it moves
+  resolution: 0.025 # meter/cell
+  #width: 3.0 # meter
+  #height: 3.0 # meter
+  transform_tolerance: 0.5
+  planner_patiente: 5.0 #how long the planner will attempt to find a valid plan before
+  #space clearing operations are performed

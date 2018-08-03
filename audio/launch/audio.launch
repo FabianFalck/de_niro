@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!--
+# Launch file for the Audio Out stack.
+# Author: Nico Smuts
+# Date: 05/18
+-->
+
+<launch>
+
+  <!-- Launch audio output server -->
+  <node pkg="audio" type="audio_out_server.py" name="audio_out"/>
+
+</launch>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!--
+# A launch file for manipulating quickie base with an Xbox controller
+# Note: currently not working
+# Author: John Lingi
+# 02/18
+-->
+
+<launch>
+
+  <!--Xbox controller publisher-->
+  <node pkg="navigation" type="joy_publisher.py" name="xbox_publisher" respawn="true" />
+
+  <!--Xbox controller subscriber-->
+  <node pkg="navigation" type="movement_control.py" name="xbox_subscriber"/>
+
+</launch>
