@@ -18,7 +18,7 @@ A video and further illustrations of DE NIRO can be found here:
 
 **Photos**: <http://www.imperial.ac.uk/robot-intelligence/robots/robot_de_niro/> 
 
-Datasets of DE NIRO's sensors will soon be released soon.
+Datasets of DE NIRO's sensors will be released soon.
 
 **Sensor Datasets**: <http://www.imperial.ac.uk/robot-intelligence/software/> 
 
